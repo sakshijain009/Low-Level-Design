@@ -8,7 +8,6 @@
 - The system shall maintain **real-time tracking of spot availability** and provide this information to users.
 - The system shall support **multiple entry and exit points** and handle **concurrent access** safely.
 
----
 
 ## System Design Components
 
@@ -49,7 +48,6 @@
 - Uses the `synchronized` keyword for thread-safe operations.
 - Designed to support **concurrent entry and exit** operations.
 
----
 
 ## Design Patterns Used
 
@@ -57,7 +55,6 @@
 - **Factory Pattern** *(optional)*: Can be used to dynamically create `Car`, `Bike`, or `Bus` objects.
 - **Observer Pattern** *(optional)*: For notifying users or systems about real-time spot availability.
 
----
 
 ## `Main` Class
 - Demonstrates usage:

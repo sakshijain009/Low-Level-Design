@@ -27,8 +27,8 @@ Each problem includes:
 
 | Problem | Description | Design Patterns Used |
 |--------|-------------|----------------------|
-| 🚗 `Parking Lot` | Design a multi-level parking lot for cars, bikes, and buses | Singleton, Strategy, Optional: Observer |
-| 🎟️ `Vending Machine` | Simulates a coin-based vending machine | State, Factory |
+| 🚗 `Parking Lot` | Design a multi-level parking lot for cars, bikes, and buses | Singleton |
+| 🎟️ `Vending Machine` | Simulates a coin-based vending machine | State, Singleton  |
 | 📦 `Amazon Locker System` | Design a delivery locker system for packages | Singleton, Strategy |
 | 🛵 `Cab Booking System` | Book rides, manage drivers, and calculate fares | Strategy, Observer |
 | 🛒 `E-commerce Cart` | Design a shopping cart with product inventory | Composite, Strategy |

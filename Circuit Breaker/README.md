@@ -22,7 +22,7 @@ Think of a **traffic signal** outside a bridge:
 - Helps the system **recover gracefully**.  
 
 ## 2. Class Diagram (UML)
-
+```txt
 +---------------------+
 |     CircuitBreaker  |
 +---------------------+
@@ -59,6 +59,7 @@ Think of a **traffic signal** outside a bridge:
 +---------------------------+
 | + main(String[] args): void |
 +---------------------------+
+```
 
 ## 3. State Transition Diagram
 

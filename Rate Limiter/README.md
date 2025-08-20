@@ -39,3 +39,27 @@ Imagine we have millions of users calling an API:
    - Bucket leaks (processes) at a constant rate.
    - Smooths traffic into fixed flow.
 
+## 📌 Core Entities
+1. **RateLimiter**
+   - Configurable per user or API.
+   - Attributes:
+     - `maxRequests` → maximum allowed requests
+     - `timeWindowMillis` → duration of sliding window
+     - `userRequests` → Map<UserId, Queue of timestamps>
+   - Methods:
+     - `allowRequest(userId)` → returns true/false
+
+2. **User Requests Queue**
+   - Holds timestamps of recent requests for each user.
+   - Old timestamps are removed when they fall outside the window.
+
+## 🔄 Flow of Logic (Sliding Window with Queue)
+
+1. **Request arrives** → call `allowRequest(userId)`  
+2. Fetch or create queue for this `userId`.  
+3. Remove timestamps older than `(now - timeWindowMillis)`.  
+4. If queue size `< maxRequests`:  
+   - Add current timestamp  
+   - ✅ Allow request  
+5. Else:  
+   - ❌ Deny request  

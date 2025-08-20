@@ -62,4 +62,8 @@ Imagine we have millions of users calling an API:
    - Add current timestamp  
    - ✅ Allow request  
 5. Else:  
-   - ❌ Deny request  
+   - ❌ Deny request
+
+## Diagram
+<img width="400" height="800" alt="image" src="https://github.com/user-attachments/assets/350da7a2-38e6-4cb7-9f98-128b8b2a3b72" />
+

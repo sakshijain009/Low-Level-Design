@@ -3,7 +3,6 @@
 The **SOLID principles** are five design principles intended to make software designs more **understandable, flexible, and maintainable**.  
 They are especially useful in **Java, C#, and other OOP languages**.
 
----
 
 ## 1️⃣ S — Single Responsibility Principle (SRP)
 
@@ -20,7 +19,6 @@ Each class should focus on doing **only one thing**.
 - ❌ A `User` class handling **data + persistence + email**.  
 - ✅ Separate into `User`, `UserRepository`, and `EmailService`.
 
----
 
 ## 2️⃣ O — Open/Closed Principle (OCP)
 
@@ -36,7 +34,6 @@ Software entities (classes, modules, functions) should be **open for extension, 
 - ❌ `AreaCalculator` that checks `if (circle) … else if (rectangle)…`.  
 - ✅ Use `Shape` interface with `area()` method → add `Triangle` later without changing old code.
 
----
 
 ## 3️⃣ L — Liskov Substitution Principle (LSP)
 
@@ -52,7 +49,6 @@ If `T` is a type, then any subtype `S` should be usable in place of `T` without 
 - ❌ `Penguin` extends `Bird` but throws error in `fly()`.  
 - ✅ Split into `FlyingBird` and `NonFlyingBird`. `Sparrow` implements `FlyingBird`, `Penguin` implements `Bird`.
 
----
 
 ## 4️⃣ I — Interface Segregation Principle (ISP)
 
@@ -69,7 +65,6 @@ Prefer **many small interfaces** over a single fat one.
 - ❌ `Worker` interface with `work()` and `eat()`. Robots don’t eat!  
 - ✅ Split into `Workable` and `Eatable`. `Human` implements both, `Robot` only `Workable`.
 
----
 
 ## 5️⃣ D — Dependency Inversion Principle (DIP)
 
@@ -86,7 +81,6 @@ High-level modules shouldn’t depend on low-level modules; both should depend o
 - ❌ `Notification` directly depends on `EmailService`.  
 - ✅ `Notification` depends on `MessageService` interface → `EmailService`, `SMSService` are interchangeable.
 
----
 
 # 🎯 Quick Recap
 
@@ -96,7 +90,6 @@ High-level modules shouldn’t depend on low-level modules; both should depend o
 - **I** → Prefer small, focused interfaces.  
 - **D** → Depend on abstractions, not implementations.  
 
----
 
 📌 **Why SOLID matters in interviews?**  
 - Shows you understand **clean code and maintainability**.  

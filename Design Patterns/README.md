@@ -91,3 +91,62 @@ class ShapeFactory {
 // Shape shape = new ShapeFactory().getShape("circle");
 // shape.draw();
 ```
+
+### Abstract Factory Method
+Create families of related objects.
+
+```java
+// Product interfaces
+interface Animal {
+    void speak();
+}
+interface Food {
+    void eat();
+}
+
+// Concrete products
+class Dog implements Animal {
+    public void speak() { System.out.println("Woof!"); }
+}
+class DogFood implements Food {
+    public void eat() { System.out.println("Eating dog food."); }
+}
+
+class Cat implements Animal {
+    public void speak() { System.out.println("Meow!"); }
+}
+class CatFood implements Food {
+    public void eat() { System.out.println("Eating cat food."); }
+}
+
+// Abstract factory
+interface PetFactory {
+    Animal createAnimal();
+    Food createFood();
+}
+
+// Concrete factories
+class DogFactory implements PetFactory {
+    public Animal createAnimal() { return new Dog(); }
+    public Food createFood() { return new DogFood(); }
+}
+
+class CatFactory implements PetFactory {
+    public Animal createAnimal() { return new Cat(); }
+    public Food createFood() { return new CatFood(); }
+}
+
+// Usage
+public class AbstractFactoryDemo {
+    public static void main(String[] args) {
+        PetFactory factory = new DogFactory();   // Switch to CatFactory easily
+
+        Animal pet = factory.createAnimal();
+        Food food = factory.createFood();
+
+        pet.speak();   // Woof!
+        food.eat();    // Eating dog food.
+    }
+}
+
+```

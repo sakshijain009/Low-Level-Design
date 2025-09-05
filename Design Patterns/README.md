@@ -150,3 +150,50 @@ public class AbstractFactoryDemo {
 }
 
 ```
+
+### Builder Method
+Step-by-step object construction.
+
+```java
+class House {
+    private String walls;
+    private String roof;
+    private String floor;
+
+    public static class Builder {
+        private String walls;
+        private String roof;
+        private String floor;
+
+        public Builder setWalls(String walls) {
+            this.walls = walls; return this;
+        }
+        public Builder setRoof(String roof) {
+            this.roof = roof; return this;
+        }
+        public Builder setFloor(String floor) {
+            this.floor = floor; return this;
+        }
+
+        public House build() {
+            House house = new House();
+            house.walls = this.walls;
+            house.roof = this.roof;
+            house.floor = this.floor;
+            return house;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "House with " + walls + ", " + roof + ", " + floor;
+    }
+}
+
+// Usage:
+// House h = new House.Builder()
+//              .setWalls("Brick Walls")
+//              .setRoof("Concrete Roof")
+//              .setFloor("Wooden Floor")
+//              .build();
+```

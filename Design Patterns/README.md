@@ -197,3 +197,72 @@ class House {
 //              .setFloor("Wooden Floor")
 //              .build();
 ```
+
+### Prototype Method
+
+We want to create **shapes** (Circle, Rectangle). Instead of instantiating them from scratch each time (which might be expensive), we clone a prototype object.
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+// Prototype interface
+abstract class Shape implements Cloneable {
+    private String type;
+
+    abstract void draw();
+
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
+
+    @Override
+    public Shape clone() {
+        try {
+            return (Shape) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+
+// Concrete prototypes
+class Circle extends Shape {
+    public Circle() { setType("Circle"); }
+    @Override
+    public void draw() { System.out.println("Drawing a Circle"); }
+}
+
+class Rectangle extends Shape {
+    public Rectangle() { setType("Rectangle"); }
+    @Override
+    public void draw() { System.out.println("Drawing a Rectangle"); }
+}
+
+// Prototype registry
+class ShapeCache {
+    private static Map<String, Shape> shapeMap = new HashMap<>();
+
+    public static void loadCache() {
+        shapeMap.put("circle", new Circle());
+        shapeMap.put("rectangle", new Rectangle());
+    }
+
+    public static Shape getShape(String key) {
+        Shape prototype = shapeMap.get(key);
+        return prototype.clone(); // clone instead of new
+    }
+}
+
+// Usage
+public class PrototypeDemo {
+    public static void main(String[] args) {
+        ShapeCache.loadCache();
+
+        Shape clonedCircle = ShapeCache.getShape("circle");
+        clonedCircle.draw();  // Drawing a Circle
+
+        Shape clonedRect = ShapeCache.getShape("rectangle");
+        clonedRect.draw();    // Drawing a Rectangle
+    }
+}
+```

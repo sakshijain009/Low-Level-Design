@@ -49,12 +49,45 @@
 ## ✅ Examples (Quick Java Snippets)
 
 ### Singleton
+Ensure only **one instance** exists.
+
 ```java
 public class Singleton {
     private static final Singleton instance = new Singleton();
-    private Singleton() {}
+
+    private Singleton() {}  // private constructor
+
     public static Singleton getInstance() {
         return instance;
     }
 }
+```
+
+### Factory Method
+Create objects without exposing instantiation logic.
+
+```java
+interface Shape {
+    void draw();
+}
+
+class Circle implements Shape {
+    public void draw() { System.out.println("Circle"); }
+}
+
+class Square implements Shape {
+    public void draw() { System.out.println("Square"); }
+}
+
+class ShapeFactory {
+    public Shape getShape(String type) {
+        if (type.equalsIgnoreCase("circle")) return new Circle();
+        if (type.equalsIgnoreCase("square")) return new Square();
+        return null;
+    }
+}
+
+// Usage:
+// Shape shape = new ShapeFactory().getShape("circle");
+// shape.draw();
 ```

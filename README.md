@@ -31,5 +31,5 @@ Each problem includes:
 | 🎟️ `Vending Machine` | Simulates a coin-based vending machine | State, Singleton  |
 | 📦 `Stack Overflow` | Design a delivery locker system for packages | Singleton, Strategy |
 | 🛵 `Cab Booking System` | Book rides, manage drivers, and calculate fares | Strategy, Observer |
-| 🛒 `E-commerce Cart` | Design a shopping cart with product inventory | Composite, Strategy |
+| 🛒 `Notification Alert` | Design a notification alert when items back in stock | Strategy, Observer |
 | 🏦 `ATM Machine` | Simulate ATM cash withdrawal and bill dispenser | Chain of Responsibility |

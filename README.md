@@ -25,11 +25,9 @@ Each problem includes:
 
 ## 🚀 Projects
 
-| Problem | Description | Design Patterns Used |
-|--------|-------------|----------------------|
-| 🚗 `Parking Lot` | Design a multi-level parking lot for cars, bikes, and buses | Singleton |
-| 🎟️ `Vending Machine` | Simulates a coin-based vending machine | State, Singleton  |
-| 📦 `Stack Overflow` | Design a delivery locker system for packages | Singleton, Strategy |
-| 🛵 `Cab Booking System` | Book rides, manage drivers, and calculate fares | Strategy, Observer |
-| 🛒 `E-commerce Cart` | Design a shopping cart with product inventory | Composite, Strategy |
-| 🏦 `ATM Machine` | Simulate ATM cash withdrawal and bill dispenser | Chain of Responsibility |
+| Problem | Description | Design Patterns Used | Link |
+|--------|-------------|----------------------|----------|
+| 🚗 `Parking Lot` | Design a multi-level parking lot for cars, bikes, and buses | Singleton | [Parking Lot](Parking-Lot/src) |
+| 🎟️ `Vending Machine` | Simulates a coin-based vending machine | State, Singleton  | [Vending Machine](Vending-Machine/src) |
+| 📦 `Stack Overflow` | Design a delivery locker system for packages | Singleton, Strategy | [Stack Overflow](Stack-Overflow/src) |
+| 🛒 `Notification Alert` | Design a notification alert when items back in stock | Strategy, Observer | [Notification Alert](Notification-Alert/src) |
